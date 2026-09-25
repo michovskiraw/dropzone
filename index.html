@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#101013" />
+  <meta name="description" content="Dropzone — local drag & drop file workspace." />
+  <title>Dropzone — Local File Workspace</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a class="brand" href="#"><span>▣</span>Dropzone</a>
+    <div class="top-actions">
+      <button class="ghost" id="clearBtn">Clear</button>
+      <button class="accent" id="pickBtn">+ Add files</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">LOCAL FILE WORKSPACE</p>
+      <h1>Drop it.<br><span>Sort it. Done.</span></h1>
+      <p>Preview files, inspect metadata and organize a temporary workspace directly in your browser. Nothing is uploaded anywhere.</p>
+    </section>
+
+    <section class="drop-card" id="dropArea" tabindex="0">
+      <input id="fileInput" type="file" multiple hidden />
+      <div class="drop-icon">↓</div>
+      <h2>Drop files here</h2>
+      <p>or click to browse</p>
+      <small>Files stay in this browser session only.</small>
+    </section>
+
+    <section class="stats">
+      <article><span>Files</span><strong id="fileCount">0</strong></article>
+      <article><span>Total size</span><strong id="totalSize">0 B</strong></article>
+      <article><span>Images</span><strong id="imageCount">0</strong></article>
+      <article><span>Other</span><strong id="otherCount">0</strong></article>
+    </section>
+
+    <section class="workspace">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORKSPACE</p>
+          <h2>Your files</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="image">Images</button>
+          <button class="filter" data-filter="document">Docs</button>
+          <button class="filter" data-filter="other">Other</button>
+        </div>
+      </div>
+
+      <div id="fileGrid" class="file-grid"></div>
+    </section>
+
+    <section class="about">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>Private by design.</h2>
+      </div>
+      <p>Dropzone is a browser-only portfolio project by Michał Ciechanowski. Files are processed locally with the File API and object URLs — no server and no upload.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Dropzone</span>
+    <span>Browser File API · no backend</span>
+  </footer>
+
+  <template id="fileTemplate">
+    <article class="file-card">
+      <div class="preview"></div>
+      <div class="file-body">
+        <strong class="file-name"></strong>
+        <span class="file-meta"></span>
+        <div class="file-actions">
+          <button class="small ghost preview-btn">Preview</button>
+          <button class="small ghost remove-btn">Remove</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="previewModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">PREVIEW</p>
+          <h3 id="previewTitle"></h3>
+        </div>
+        <button class="close-btn" id="closePreview">×</button>
+      </div>
+      <div id="previewContent" class="preview-content"></div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
