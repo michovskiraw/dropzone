@@ -1,17 +1,24 @@
 # Dropzone
 
-A browser-only drag & drop file workspace built as a portfolio project.
+[![Live demo](https://img.shields.io/badge/live-demo-brightgreen)](https://dropzone.michovski.site)
+[![Portfolio](https://img.shields.io/badge/portfolio-michovski.site-black)](https://michovski.site)
+
+![Dropzone preview](docs/preview.png)
+
+Browser-only file workspace with previews.
+
+## Live
+
+**https://dropzone.michovski.site**
 
 ## Features
 
-- Drag & drop or browse for files
+- Drag & drop and file picker support
 - Image thumbnails
-- Text file preview
-- File metadata and size summary
-- Filter by type
-- Remove files from the temporary workspace
-- No uploads and no backend
-- Responsive UI
+- Text-file previews
+- File metadata and size summaries
+- Type filters
+- Local browser-only processing
 
 ## Stack
 
@@ -21,26 +28,21 @@ A browser-only drag & drop file workspace built as a portfolio project.
 - Browser File API
 - Object URLs
 
-## Privacy model
-
-Files are processed locally in the browser session and are not uploaded anywhere.
-
 ## Run locally
 
-Open `index.html` directly, or use VS Code + Live Server.
+No build step is required.
 
-## Deploy
+```bash
+git clone https://github.com/michovskiraw/dropzone.git
+cd dropzone
+```
 
-Works on Netlify, GitHub Pages or any static host.
+Then open `index.html`, or use VS Code + Live Server.
 
-## Suggested GitHub description
+## Notes
 
-> Browser-only drag & drop file workspace with previews, metadata and local processing.
+This is a personal/demo portfolio project.
 
-## Suggested topics
+---
 
-`javascript` `file-api` `drag-and-drop` `frontend` `vanilla-js` `netlify`
-
-> Demo / portfolio project.
-
-Built by Michał Ciechanowski.
+Built by **Michał Ciechanowski** · [michovski.site](https://michovski.site)
